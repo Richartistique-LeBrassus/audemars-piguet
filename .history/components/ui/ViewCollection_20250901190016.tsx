@@ -1,0 +1,29 @@
+import Image from "next/image";
+
+interface ViewCollectionProps {
+  img: string;
+  title: string;
+}
+
+export default function ViewCollection({ img, title }: ViewCollectionProps) {
+  return (
+    <figure className="w-fit h-fit cursor-pointer overflow-clip flex flex-col items-start">
+      <div className="relative w-[83.8vw] h-full 
+        md:w-[41.82vw] md:h-[27.42vw]
+        mdp:w-fit mdp:h-fit
+        overflow-hidden"
+      >
+        <Image
+          src={img}
+          alt={title}
+          fill
+          className="object-cover mdp:object-cover"
+        />
+      </div>
+
+      <div className="mt-4">
+        <p className="text-[22px]">----- View Collection</p>
+      </div>
+    </figure>
+  );
+}
